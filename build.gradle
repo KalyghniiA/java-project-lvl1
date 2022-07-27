@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'net.researchgate.release' version '3.0.0'
 }
 
 group 'hexlet.code'
@@ -16,4 +18,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = 'hexlet.code.App'
+}
+
+compileJava {
+    options.release = 17
 }
