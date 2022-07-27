@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'net.researchgate.release' version '3.0.0'
+    id 'checkstyle'
 }
 
 group 'hexlet.code'
