@@ -9,6 +9,7 @@ public class Calc {
         Scanner sc = new Scanner(System.in);
         String name = Cli.gettingToKnowUser();
 
+        System.out.println("What is the result of the expression?");
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
             String example = createExample();
             int correctAnswer = gettingCorrectAnswer(example);
