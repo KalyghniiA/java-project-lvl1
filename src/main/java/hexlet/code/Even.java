@@ -4,14 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void playingGame(String name) {
+    static final int MAX_NUM_RANDOM = 20;
+    public static void playingGame() {
+        String name = Cli.gettingToKnowUser();
+
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        int MAX_NUM_WINS = 3;
+
         Random rnd = new Random();
         Scanner sc = new Scanner(System.in);
 
-        for (var i = 0; i < MAX_NUM_WINS; i++) {
-            int number = rnd.nextInt(20);
+        for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
+            int number = rnd.nextInt(MAX_NUM_RANDOM);
             System.out.println("Question: " + Integer.toString(number));
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
             String answer = sc.next();
