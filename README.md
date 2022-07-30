@@ -7,3 +7,5 @@ https://asciinema.org/a/qdlJ1nKCUArWvPa9FJ2ANhimk - EvenGame
 https://asciinema.org/a/rqX04OwvzUv8grKflRoDodI6y - CalcGame
 
 https://asciinema.org/a/nL2NFsxr2k43it8KGeaMSyVAz - GCD
+
+https://asciinema.org/a/4pJlUEKc7WgMMxCWijs4NMiIm - Progression

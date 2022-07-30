@@ -8,12 +8,14 @@ public class App {
     static final int INDEX_EVEN = 2;
     static final int INDEX_CALC = 3;
     static final int INDEX_GCD = 4;
+    static final int INDEX_PROGRESSION = 5;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         Scanner gameNumberScanner = new Scanner(System.in);
         int gameNumber = gameNumberScanner.nextInt();
@@ -32,6 +34,8 @@ public class App {
             case INDEX_GCD:
                 Gcd.playingGame();
                 break;
+            case INDEX_PROGRESSION:
+                Progression.playingGame();
             default:
                 return;
         }

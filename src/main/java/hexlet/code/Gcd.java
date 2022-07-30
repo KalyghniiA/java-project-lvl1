@@ -28,9 +28,8 @@ public class Gcd {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
                 return;
             }
-            System.out.println("Congratulations, " + name + "!");
         }
-
+        System.out.println("Congratulations, " + name + "!");
     }
 
     static int gettingCorrectAnswer(int firstNumber, int secondNumber) {
