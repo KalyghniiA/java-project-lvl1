@@ -24,7 +24,7 @@ public class Even {
             System.out.println("Your answer: " + answer);
             if (!answer.equals(correctAnswer)) {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
-                System.out.println("Let\'s try again, " + name);
+                System.out.println("Let\'s try again, " + name + "!");
                 return;
             }
             System.out.println("Correct!");
