@@ -44,8 +44,10 @@ public class App {
                 break;
             case INDEX_PROGRESSION:
                 Progression.playingGame();
+                break;
             case INDEX_PRIME:
                 Prime.playingGame();
+                break;
             default:
                 return;
         }
