@@ -9,8 +9,8 @@ public class Progression {
     static final int MAX_ITERATION_RANDOM = 10;
     static final int MIN_MULTIPLIER_RANDOM = 1;
     static final int MAX_MULTIPLIER_RANDOM = 5;
-    static Random rnd = new Random();
-    static Scanner sc = new Scanner(System.in);
+    private static Random rnd = new Random();
+    private static Scanner sc = new Scanner(System.in);
 
     public static void playingGame() {
         String name = Cli.gettingToKnowUser();
@@ -38,11 +38,11 @@ public class Progression {
 
         int startingNumber = rnd.nextInt(MAX_START_NUM_RANDOM);
         int quantityIteration = Utils.getNumberToInterval(MIN_ITERATION_RANDOM, MAX_ITERATION_RANDOM);
-        int multiplier = Utils.getNumberToInterval(MIN_MULTIPLIER_RANDOM, MAX_MULTIPLIER_RANDOM);;
+        int multiplier = Utils.getNumberToInterval(MIN_MULTIPLIER_RANDOM, MAX_MULTIPLIER_RANDOM);
 
         String question = Integer.toString(startingNumber);
 
-        for(var i = 0; i < quantityIteration; i++) {
+        for (var i = 0; i < quantityIteration; i++) {
             startingNumber += multiplier;
             question += " " + Integer.toString(startingNumber);
         }

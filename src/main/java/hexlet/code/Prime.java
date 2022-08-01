@@ -28,7 +28,7 @@ public class Prime {
 
     static boolean getCorrectAnswer(int number) {
         var max = Math.sqrt(number);
-        for(var i = 2; i < max; i++) {
+        for (var i = 2; i < max; i++) {
             if (number % i == 0) {
                 return false;
             }
