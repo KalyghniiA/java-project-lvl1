@@ -22,12 +22,11 @@ public class Gcd {
             System.out.println("Question: " + question);
             int answer = sc.nextInt();
             System.out.println("Your answer: " + answer);
-            if (answer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
+            if (answer != correctAnswer) {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
                 return;
             }
+            System.out.println("Correct!");
         }
         System.out.println("Congratulations, " + name + "!");
     }

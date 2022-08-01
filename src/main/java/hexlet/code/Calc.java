@@ -16,14 +16,13 @@ public class Calc {
             System.out.println("Question: " + example);
             int answer = sc.nextInt();
             System.out.println("Your answer: " + answer);
-            if (answer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
+            if (answer != correctAnswer) {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
                 return;
             }
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Correct!");
         }
+        System.out.println("Congratulations, " + name + "!");
     }
 
     static String createExample() {

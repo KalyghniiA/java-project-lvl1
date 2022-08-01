@@ -19,12 +19,11 @@ public class Even {
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
             String answer = sc.next();
             System.out.println("Your answer: " + answer);
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-            } else {
+            if (!answer.equals(correctAnswer)) {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
                 return;
             }
+            System.out.println("Correct!");
         }
 
         System.out.println("Congratulations, " + name + "!");
