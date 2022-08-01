@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.utils;
 
 public class Utils {
     public static int getNumberToInterval(int start, int end) {
