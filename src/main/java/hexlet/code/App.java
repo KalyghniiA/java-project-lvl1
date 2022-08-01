@@ -28,8 +28,7 @@ public class App {
         Scanner gameNumberScanner = new Scanner(System.in);
         int gameNumber = gameNumberScanner.nextInt();
         System.out.println("Your choice: " + Integer.toString(gameNumber));
-        System.out.println("");
-        System.out.println("Welcome to the Brain Games");
+        System.out.println("Welcome to the Brain Games!");
         switch (gameNumber) {
             case INDEX_GREET:
                 Cli.gettingToKnowUser();
