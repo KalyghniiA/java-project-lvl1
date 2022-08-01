@@ -31,6 +31,7 @@ public class Progression {
             System.out.println("Your answer: " + answer);
             if (answer != correctAnswer) {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
+                System.out.println("Let\'s try again, " + name);
                 return;
             }
             System.out.println("Correct!");
