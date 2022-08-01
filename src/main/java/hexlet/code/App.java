@@ -17,7 +17,6 @@ public class App {
     static final int INDEX_PROGRESSION = 5;
     static final int INDEX_PRIME = 6;
     public static void main(String[] args) {
-        System.out.println("Welcome to the Brain Games");
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -29,6 +28,7 @@ public class App {
         Scanner gameNumberScanner = new Scanner(System.in);
         int gameNumber = gameNumberScanner.nextInt();
         System.out.println("Your choice: " + Integer.toString(gameNumber));
+        System.out.println("");
         System.out.println("Welcome to the Brain Games");
         switch (gameNumber) {
             case INDEX_GREET:
