@@ -2,16 +2,17 @@ package hexlet.code.games;
 
 import hexlet.code.App;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Gcd {
-    static final int MAX_NUM_RANDOM = 50;
+    private static final int MAX_NUM_RANDOM = 50;
+    private static Random rnd = new Random();
     public static void playingGame() {
         String name = Cli.gettingToKnowUser();
-        Random rnd = new Random();
-        Scanner sc = new Scanner(System.in);
+
 
         System.out.println("Find the greatest common divisor of given numbers.");
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
@@ -21,16 +22,10 @@ public class Gcd {
             String question = Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
             int correctAnswer = gettingCorrectAnswer(firstNumber, secondNumber);
 
-
-            System.out.println("Question: " + question);
-            int answer = sc.nextInt();
-            System.out.println("Your answer: " + answer);
-            if (answer != correctAnswer) {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
-                System.out.println("Let\'s try again, " + name + "!");
+            boolean result = Engine.getResultGame(correctAnswer, question, name);
+            if (!result) {
                 return;
             }
-            System.out.println("Correct!");
         }
         System.out.println("Congratulations, " + name + "!");
     }

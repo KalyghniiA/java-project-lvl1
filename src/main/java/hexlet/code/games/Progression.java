@@ -2,19 +2,19 @@ package hexlet.code.games;
 
 import hexlet.code.App;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 import hexlet.code.utils.Utils;
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Progression {
-    static final int MAX_START_NUM_RANDOM = 10;
-    static final int MIN_ITERATION_RANDOM = 5;
-    static final int MAX_ITERATION_RANDOM = 10;
-    static final int MIN_MULTIPLIER_RANDOM = 1;
-    static final int MAX_MULTIPLIER_RANDOM = 5;
+    private static final int MAX_START_NUM_RANDOM = 10;
+    private static final int MIN_ITERATION_RANDOM = 5;
+    private static final int MAX_ITERATION_RANDOM = 10;
+    private static final int MIN_MULTIPLIER_RANDOM = 1;
+    private static final int MAX_MULTIPLIER_RANDOM = 5;
     private static Random rnd = new Random();
-    private static Scanner sc = new Scanner(System.in);
 
     public static void playingGame() {
         String name = Cli.gettingToKnowUser();
@@ -26,15 +26,11 @@ public class Progression {
             int indexCorrectAnswer = getIndex(elementsQuestion);
             int correctAnswer = getCorrectAnswer(indexCorrectAnswer, elementsQuestion);
             String question = createQuestion(indexCorrectAnswer, elementsQuestion);
-            System.out.println("Question: " + question);
-            int answer = sc.nextInt();
-            System.out.println("Your answer: " + answer);
-            if (answer != correctAnswer) {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
-                System.out.println("Let\'s try again, " + name + "!");
+
+            boolean result = Engine.getResultGame(correctAnswer, question, name);
+            if (!result) {
                 return;
             }
-            System.out.println("Correct!");
         }
         System.out.println("Congratulations, " + name + "!");
     }
