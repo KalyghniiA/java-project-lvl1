@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class Gcd {
     private static final int MAX_NUM_RANDOM = 50;
-    private static Random rnd = new Random();
     private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
+    private static Random rnd = new Random();
     public static void playingGame() {
         String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
 

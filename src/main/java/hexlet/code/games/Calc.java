@@ -8,8 +8,9 @@ import java.util.Random;
 
 public class Calc {
     private static final int MAX_NUM_RANDOM = 10;
-    private static Random rnd = new Random();
     private static final String DESCRIPTION = "What is the result of the expression?";
+    private static final String[] OPERATORS = {" + ", " - ", " * "};
+    private static Random rnd = new Random();
     public static void playingGame() {
         String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
 
@@ -25,9 +26,9 @@ public class Calc {
 
     static String createQuestion() {
 
-        String[] operators = {" + ", " - ", " * "};
+
         return Integer.toString(rnd.nextInt(MAX_NUM_RANDOM))
-                + operators[rnd.nextInt(operators.length)]
+                + OPERATORS[rnd.nextInt(OPERATORS.length)]
                 + Integer.toString(rnd.nextInt(MAX_NUM_RANDOM));
     }
 
