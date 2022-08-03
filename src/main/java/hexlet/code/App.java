@@ -10,12 +10,12 @@ import java.util.Scanner;
 
 public class App {
     public static final int MAX_QUANTITY_CORRECT_ANSWER = 3;
-    static final int INDEX_GREET = 1;
-    static final int INDEX_EVEN = 2;
-    static final int INDEX_CALC = 3;
-    static final int INDEX_GCD = 4;
-    static final int INDEX_PROGRESSION = 5;
-    static final int INDEX_PRIME = 6;
+    private static final int INDEX_GREET = 1;
+    private static final int INDEX_EVEN = 2;
+    private static final int INDEX_CALC = 3;
+    private static final int INDEX_GCD = 4;
+    private static final int INDEX_PROGRESSION = 5;
+    private static final int INDEX_PRIME = 6;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
