@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.App;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import java.util.Random;
@@ -10,23 +9,21 @@ import java.util.Random;
 public class Calc {
     private static final int MAX_NUM_RANDOM = 10;
     private static Random rnd = new Random();
+    private static final String DESCRIPTION = "What is the result of the expression?";
     public static void playingGame() {
-        String name = Cli.gettingToKnowUser();
+        String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
 
-        System.out.println("What is the result of the expression?");
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
-            String example = createExample();
-            int correctAnswer = gettingCorrectAnswer(example);
+            String question = createQuestion();
+            int correctAnswer = gettingCorrectAnswer(question);
 
-            boolean result = Engine.getResultGame(correctAnswer, example, name);
-            if (!result) {
-                return;
-            }
+            conditions[i] = question + "=" + correctAnswer;
         }
-        System.out.println("Congratulations, " + name + "!");
+
+        Engine.getResultGame(conditions, DESCRIPTION);
     }
 
-    static String createExample() {
+    static String createQuestion() {
 
         String[] operators = {" + ", " - ", " * "};
         return Integer.toString(rnd.nextInt(MAX_NUM_RANDOM))

@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.App;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.utils.Utils;
 
@@ -14,12 +13,12 @@ public class Progression {
     private static final int MAX_ITERATION_RANDOM = 10;
     private static final int MIN_MULTIPLIER_RANDOM = 1;
     private static final int MAX_MULTIPLIER_RANDOM = 5;
+    private static final String DESCRIPTION = "What number is missing in the progression?";
     private static Random rnd = new Random();
 
     public static void playingGame() {
-        String name = Cli.gettingToKnowUser();
+        String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
 
-        System.out.println("What number is missing in the progression?");
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
             String fullStringQuestion = createString();
             String[] elementsQuestion = fullStringQuestion.split(" ");
@@ -27,12 +26,10 @@ public class Progression {
             int correctAnswer = getCorrectAnswer(indexCorrectAnswer, elementsQuestion);
             String question = createQuestion(indexCorrectAnswer, elementsQuestion);
 
-            boolean result = Engine.getResultGame(correctAnswer, question, name);
-            if (!result) {
-                return;
-            }
+            conditions[i] = question + "=" + Integer.toString(correctAnswer);
         }
-        System.out.println("Congratulations, " + name + "!");
+
+        Engine.getResultGame(conditions, DESCRIPTION);
     }
 
     static String createString() {

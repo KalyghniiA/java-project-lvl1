@@ -1,29 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.App;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.utils.Utils;
 
 public class Prime {
     private static final int MIN_QUESTION_NUMBER = 1;
     private static final int MAX_QUESTION_NUMBER = 20;
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void playingGame() {
-        String name = Cli.gettingToKnowUser();
+        String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
-            int questionNumber = Utils.getNumberToInterval(MIN_QUESTION_NUMBER, MAX_QUESTION_NUMBER);
-            String correctAnswer = getCorrectAnswer(questionNumber) ? "yes" : "no";
+            int question = Utils.getNumberToInterval(MIN_QUESTION_NUMBER, MAX_QUESTION_NUMBER);
+            String correctAnswer = getCorrectAnswer(question) ? "yes" : "no";
 
 
-            boolean result = Engine.getResultGame(correctAnswer, Integer.toString(questionNumber), name);
-            if (!result) {
-                return;
-            }
+            conditions[i] = Integer.toString(question) + "=" + correctAnswer;
         }
-        System.out.println("Congratulations, " + name + "!");
+
+        Engine.getResultGame(conditions, DESCRIPTION);
     }
 
     static boolean getCorrectAnswer(int number) {
