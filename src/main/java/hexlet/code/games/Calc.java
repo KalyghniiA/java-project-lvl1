@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.App;
 import hexlet.code.Engine;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -12,37 +14,37 @@ public class Calc {
     private static final String[] OPERATORS = {" + ", " - ", " * "};
     private static Random rnd = new Random();
     public static void playingGame() {
-        String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
+        Map<String, String> conditions = new HashMap<>();
 
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
             String question = createQuestion();
             int correctAnswer = gettingCorrectAnswer(question);
 
-            conditions[i] = question + "=" + correctAnswer;
+            conditions.put(question, Integer.toString(correctAnswer));
         }
 
         Engine.getResultGame(conditions, DESCRIPTION);
     }
 
-    static String createQuestion() {
+    private static String createQuestion() {
 
 
-        return Integer.toString(rnd.nextInt(MAX_NUM_RANDOM))
+        return rnd.nextInt(MAX_NUM_RANDOM)
                 + OPERATORS[rnd.nextInt(OPERATORS.length)]
-                + Integer.toString(rnd.nextInt(MAX_NUM_RANDOM));
+                + rnd.nextInt(MAX_NUM_RANDOM);
     }
 
-    static int gettingCorrectAnswer(String example) {
+    private static int gettingCorrectAnswer(String example) {
         String[] elementsExample = example.split(" ");
-        if (elementsExample[1].equals("+")) {
-            return Integer.valueOf(elementsExample[0]) + Integer.valueOf(elementsExample[2]);
+        switch (elementsExample[1]) {
+            case "+":
+                return Integer.valueOf(elementsExample[0]) + Integer.valueOf(elementsExample[2]);
+            case "-":
+                return Integer.valueOf(elementsExample[0]) - Integer.valueOf(elementsExample[2]);
+            case "*":
+                return Integer.valueOf(elementsExample[0]) * Integer.valueOf(elementsExample[2]);
+            default:
+                throw new Error("unknown operator");
         }
-        if (elementsExample[1].equals("-")) {
-            return Integer.valueOf(elementsExample[0]) - Integer.valueOf(elementsExample[2]);
-        }
-        if (elementsExample[1].equals("*")) {
-            return Integer.valueOf(elementsExample[0]) * Integer.valueOf(elementsExample[2]);
-        }
-        return 0;
     }
 }

@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.App;
 import hexlet.code.Engine;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Even {
@@ -12,13 +14,13 @@ public class Even {
     private static final String ANSWER_NO = "no";
     private static Random rnd = new Random();
     public static void playingGame() {
-        String[] conditions = new String[App.MAX_QUANTITY_CORRECT_ANSWER];
+        Map<String, String> conditions = new HashMap<>();
 
         for (var i = 0; i < App.MAX_QUANTITY_CORRECT_ANSWER; i++) {
             int number = rnd.nextInt(MAX_NUM_RANDOM);
             String correctAnswer = number % 2 == 0 ? ANSWER_YES : ANSWER_NO;
 
-            conditions[i] = Integer.toString(number) + "=" + correctAnswer;
+            conditions.put(Integer.toString(number), correctAnswer);
         }
 
         Engine.getResultGame(conditions, DESCRIPTION);
