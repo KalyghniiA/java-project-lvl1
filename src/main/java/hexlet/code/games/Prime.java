@@ -12,7 +12,7 @@ public class Prime {
     private static final int MAX_QUESTION_NUMBER = 20;
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final String ANSWER_YES = "yes";
-    static final String ANSWER_NO = "no";
+    private static final String ANSWER_NO = "no";
 
     public static void playingGame() {
         Map<String, String> conditions = new HashMap<>();
