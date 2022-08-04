@@ -25,6 +25,7 @@ public class Prime {
             conditions.put(Integer.toString(question), correctAnswer);
         }
 
+
         Engine.getResultGame(conditions, DESCRIPTION);
     }
 
